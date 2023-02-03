@@ -1,0 +1,22 @@
+* ::after , * ::before{
+    display: block;
+}
+
+body{
+    background-color: #08406e;
+    color: white;
+}
+nav{
+    color: white;
+text-decoration: none;
+}
+
+.card,
+.card-body{
+display: flex;
+}
+
+#time{
+    text-align: right;
+    font-size: 45px;
+}
