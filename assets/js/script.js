@@ -3,6 +3,14 @@ var userCity = document.getElementById("inputSearch");
 var currentTimeEl = document.querySelector(".currentTime");
 var temperatureEl = document.querySelector(".temperature");
 
+var time = dayjs().format("hh:mm A");
+$(".currentTime").text(time);
+
+function displayWeather(event) {
+  event.preventDefault();
+  // temperatureEl =
+}
+
 function getLonLatApi(event) {
   event.preventDefault();
   var city = userCity.value.trim();
