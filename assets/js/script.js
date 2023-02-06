@@ -1,16 +1,28 @@
-var searchCityBtn = document.getElementById("searchCityForm");
+var searchCityBtn = document.getElementById("searchCityBtn");
 var userCity = document.getElementById("inputSearch");
+var currentTimeEl = document.querySelector(".currentTime");
+var temperatureEl = document.querySelector(".temperature");
 
-function getApi(event) {
+function getLonLatApi(event) {
   event.preventDefault();
   var city = userCity.value.trim();
   var apiKey = "b669ae4ac48bc41896b2dabb9c94a7ff";
-  var requestUrl =
-    "http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${apiKey}";
+  var requestUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&limit=5&appid=${apiKey}`;
+  console.log("city", city);
 
   fetch(requestUrl).then(function (response) {
-    response.json();
-    console.log("response: ", response);
+    if (response.ok)
+      return response.json().then(function (response) {
+        console.log("response", response);
+      });
   });
 }
-searchCityBtn.addEventListener("submit", getApi);
+function weatherTemp(data) {}
+
+searchCityBtn.addEventListener("submit", getLonLatApi);
+// console.log("this", getLonLatApi );
+// $(function () {
+//   var todaysDate = dayjs().format("hh:mm a");
+//   $(".currentTime").html(todaysDate);
+//   setInterval(currentTimeEl);
+// });

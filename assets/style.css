@@ -3,20 +3,48 @@
 }
 
 body{
-    background-color: #08406e;
-    color: white;
+    background-image: url(https://images.unsplash.com/uploads/1412026095116d2b0c90e/3bf33993?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2371&q=80);
+    background-repeat: no-repeat;
+    color: rgb(0, 0, 0);
+}
+header{
+display: flex;
+justify-content: center;
+}
+
+.card-container{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 }
 nav{
+    width: 100vh;
     color: white;
-text-decoration: none;
+    text-decoration: none;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.btn-outline-success {
+    color: #ffffff;
+    background-color: transparent;
+    background-image: none;
+    border-color: #ffffff;
 }
 
-.card,
-.card-body{
-display: flex;
+.currentTime{
+    font-size: 15px;
+}
+.temperature{
+    font-size: 64px;
 }
 
-#time{
-    text-align: right;
-    font-size: 45px;
+@media screen and(max-width:980px){
+    body{
+        width: 100vh;
+        height: 100vh;
+    }
 }
