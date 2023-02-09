@@ -1,4 +1,5 @@
 //tracking
+var cardTextEl = document.getElementById("card-text");
 var searchCityBtn = document.getElementById("searchCityBtn");
 var userCity = document.getElementById("inputSearch");
 var currentTimeEl = document.querySelector(".currentTime");
@@ -14,8 +15,7 @@ var temp;
 var wind;
 var humidity;
 
-var previousSearches =
-  JSON.parse(localStorage.getItem("previousSearches")) || [];
+var previousSearches = JSON.parse(localStorage.getItem("previousSearches"));
 
 //current time
 var time = dayjs().format("hh:mm A");
@@ -27,32 +27,27 @@ $(function () {
   $(".card-header").html(fiveDay);
 });
 
-function getLonLatApi(event) {
+function getLocationApi(event) {
   event.preventDefault();
   var city = userCity.value.trim();
   var apiKey = "b669ae4ac48bc41896b2dabb9c94a7ff";
   var requestUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&limit=5&appid=${apiKey}`;
-  console.log("city", city);
 
   fetch(requestUrl).then(function (response) {
     if (response.ok)
-      return response
-        .json()
-        .then(function (response) {
-          console.log("response", response);
-        })
-        .then((data) => {
-          var temp = (data) => {
-            temperatureEl.textContent = ".temperature";
-          };
-        });
+      return response.json().then(function (response) {
+        console.log("response", response);
+        console.log("response", response.list[0].main.temp);
+        temperatureEl.textContent = response.list[0].main.temp;
+        localStorage.setItem("temp", response.list[0].main.temp);
+      });
   });
 }
 
 function saveSearches() {
   localStorage.setItem("previousSearches", JSON.stringify(previousSearches));
 }
-searchCityBtn.addEventListener("submit", getLonLatApi);
+searchCityBtn.addEventListener("submit", getLocationApi);
 
 // console.log("this", getLonLatApi );
 // $(function () {
