@@ -1,8 +1,21 @@
+//tracking
 var searchCityBtn = document.getElementById("searchCityBtn");
 var userCity = document.getElementById("inputSearch");
 var currentTimeEl = document.querySelector(".currentTime");
 var temperatureEl = document.querySelector(".temperature");
 var cardGroupEl = document.querySelector(".card-header");
+var cheaderEl = document.getElementById("cheader");
+var previousSearchContainerEl = document.getElementById(
+  "previousSearchContainer"
+);
+
+var city;
+var temp;
+var wind;
+var humidity;
+
+var previousSearches =
+  JSON.parse(localStorage.getItem("previousSearches")) || [];
 
 //current time
 var time = dayjs().format("hh:mm A");
@@ -36,6 +49,9 @@ function getLonLatApi(event) {
   });
 }
 
+function saveSearches() {
+  localStorage.setItem("previousSearches", JSON.stringify(previousSearches));
+}
 searchCityBtn.addEventListener("submit", getLonLatApi);
 
 // console.log("this", getLonLatApi );
