@@ -4,8 +4,6 @@ var currentTimeEl = document.querySelector(".currentTime");
 var temperatureEl = document.querySelector(".temperature");
 var cardGroupEl = document.querySelector(".card-header");
 
-var data = localStorage.getItem("inputSearch");
-console.log(data);
 //current time
 var time = dayjs().format("hh:mm A");
 $(".currentTime").text(time);
