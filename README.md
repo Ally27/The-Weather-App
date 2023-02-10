@@ -2,9 +2,21 @@
 
 The Weather app is easy to use and provides forecasts for your everyday needs.
 
+# Photos
+
+![](./assets/images/logo.PNG)
+![](./assets/images/snip.PNG)
+
 # Functionality
 
+- User can input a location in search bar
+- Temp range is then displayed
+
 # Deployed Application
+
+## [GitHub](https://github.com/Ally27/The-Weather-App)
+
+## [Application](https://ally27.github.io/The-Weather-App/)
 
 # License
 
