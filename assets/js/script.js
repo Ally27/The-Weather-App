@@ -9,12 +9,6 @@ var cheaderEl = document.getElementById("cheader");
 var previousSearchContainerEl = document.getElementById(
   "previousSearchContainer"
 );
-
-var city;
-var temp;
-var wind;
-var humidity;
-
 var previousSearches = JSON.parse(localStorage.getItem("previousSearches"));
 
 //current time
@@ -25,6 +19,7 @@ $(".currentTime").text(time);
 $(function () {
   var fiveDay = dayjs().format("MMM D YYYY");
   $(".card-header").html(fiveDay);
+  for (var i = 0; i < fiveDay.length; i++) return i;
 });
 
 function getLocationApi(event) {
