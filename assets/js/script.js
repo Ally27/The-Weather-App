@@ -10,9 +10,10 @@ var previousSearchContainerEl = document.getElementById(
   "previousSearchContainer"
 );
 var previousSearches = JSON.parse(localStorage.getItem("previousSearches"));
+var fiveDay = 5;
 
 //current time
-var time = dayjs().format("hh:mm A");
+var time = dayjs().format("MMM d, hh:mm A");
 $(".currentTime").text(time);
 
 //5 day
@@ -20,14 +21,15 @@ $(function () {
   var fiveDay = dayjs().format("MMM D YYYY");
   $(".card-header").html(fiveDay);
   for (var i = 0; i < fiveDay.length; i++) return i;
+  console.log(i);
 });
-
+//calling api with local storage on temp
 function getLocationApi(event) {
   event.preventDefault();
   var city = userCity.value.trim();
   var apiKey = "b669ae4ac48bc41896b2dabb9c94a7ff";
-  var requestUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&limit=5&appid=${apiKey}`;
-
+  var requestUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&count=5&appid=${apiKey}`;
+  //fetches the api
   fetch(requestUrl).then(function (response) {
     if (response.ok)
       return response.json().then(function (response) {
@@ -38,7 +40,7 @@ function getLocationApi(event) {
       });
   });
 }
-
+// attempting to create location history
 function saveSearches() {
   localStorage.setItem("previousSearches", JSON.stringify(previousSearches));
 }
