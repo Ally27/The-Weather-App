@@ -1,11 +1,19 @@
 # The-Weather-App
 
-The Weather app is easy to use and provides forecasts for your everyday needs.
+## Description
+
+The Weather App is a simple and user-friendly application that provides weather forecasts for any location. It allows users to quickly and easily obtain information on temperature ranges and weather conditions, making it ideal for everyday use.
 
 # Photos
 
-![](./assets/images/logo.PNG)
-![](./assets/images/snip.PNG)
+<img src="assets\images\logo.PNG" width="300"><br>
+<img src="assets\images\☀️-The-Weather-App.png" width="350">
+
+## Table of Contents:
+
+[ Description](#Description)  
+[ License Details](#License-Details)  
+[ Questions](#Questions)
 
 # Functionality
 
@@ -41,3 +49,11 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+## Questions:
+
+Link to my github:  
+https://github.com/Ally27 <br>
+Email me at:  
+allysonmg21@gmail.com
+for any questions
